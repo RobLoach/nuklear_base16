@@ -1,0 +1,6 @@
+[submodule "vendor/nuklear"]
+	path = vendor/nuklear
+	url = https://github.com/Immediate-Mode-UI/Nuklear.git
+[submodule "vendor/base16-h"]
+	path = vendor/base16-h
+	url = https://github.com/RobLoach/base16-h.git

@@ -33,7 +33,276 @@
 extern "C" {
 #endif
 
+#ifndef BASE16_HEADER_ONLY
+#define NK_BASE16_HEADER_ONLY
+#endif
+#include "vendor/base16-h/include/base16-3024.h"
+#include "vendor/base16-h/include/base16-apathy.h"
+#include "vendor/base16-h/include/base16-apprentice.h"
+#include "vendor/base16-h/include/base16-ashes.h"
+#include "vendor/base16-h/include/base16-atelier-cave.h"
+#include "vendor/base16-h/include/base16-atelier-cave-light.h"
+#include "vendor/base16-h/include/base16-atelier-dune.h"
+#include "vendor/base16-h/include/base16-atelier-dune-light.h"
+#include "vendor/base16-h/include/base16-atelier-estuary.h"
+#include "vendor/base16-h/include/base16-atelier-estuary-light.h"
+#include "vendor/base16-h/include/base16-atelier-forest.h"
+#include "vendor/base16-h/include/base16-atelier-forest-light.h"
+#include "vendor/base16-h/include/base16-atelier-heath.h"
+#include "vendor/base16-h/include/base16-atelier-heath-light.h"
+#include "vendor/base16-h/include/base16-atelier-lakeside.h"
+#include "vendor/base16-h/include/base16-atelier-lakeside-light.h"
+#include "vendor/base16-h/include/base16-atelier-plateau.h"
+#include "vendor/base16-h/include/base16-atelier-plateau-light.h"
+#include "vendor/base16-h/include/base16-atelier-savanna.h"
+#include "vendor/base16-h/include/base16-atelier-savanna-light.h"
+#include "vendor/base16-h/include/base16-atelier-seaside.h"
+#include "vendor/base16-h/include/base16-atelier-seaside-light.h"
+#include "vendor/base16-h/include/base16-atelier-sulphurpool.h"
+#include "vendor/base16-h/include/base16-atelier-sulphurpool-light.h"
+#include "vendor/base16-h/include/base16-atlas.h"
+#include "vendor/base16-h/include/base16-ayu-dark.h"
+#include "vendor/base16-h/include/base16-ayu-light.h"
+#include "vendor/base16-h/include/base16-ayu-mirage.h"
+#include "vendor/base16-h/include/base16-aztec.h"
+#include "vendor/base16-h/include/base16-bespin.h"
+#include "vendor/base16-h/include/base16-black-metal-bathory.h"
+#include "vendor/base16-h/include/base16-black-metal-burzum.h"
+#include "vendor/base16-h/include/base16-black-metal-dark-funeral.h"
+#include "vendor/base16-h/include/base16-black-metal-gorgoroth.h"
+#include "vendor/base16-h/include/base16-black-metal.h"
+#include "vendor/base16-h/include/base16-black-metal-immortal.h"
+#include "vendor/base16-h/include/base16-black-metal-khold.h"
+#include "vendor/base16-h/include/base16-black-metal-marduk.h"
+#include "vendor/base16-h/include/base16-black-metal-mayhem.h"
+#include "vendor/base16-h/include/base16-black-metal-nile.h"
+#include "vendor/base16-h/include/base16-black-metal-venom.h"
+#include "vendor/base16-h/include/base16-blueforest.h"
+#include "vendor/base16-h/include/base16-blueish.h"
+#include "vendor/base16-h/include/base16-brewer.h"
+#include "vendor/base16-h/include/base16-bright.h"
+#include "vendor/base16-h/include/base16-brogrammer.h"
+#include "vendor/base16-h/include/base16-brushtrees-dark.h"
+#include "vendor/base16-h/include/base16-brushtrees.h"
+#include "vendor/base16-h/include/base16-caroline.h"
+#include "vendor/base16-h/include/base16-catppuccin-frappe.h"
+#include "vendor/base16-h/include/base16-catppuccin-latte.h"
+#include "vendor/base16-h/include/base16-catppuccin-macchiato.h"
+#include "vendor/base16-h/include/base16-catppuccin-mocha.h"
+#include "vendor/base16-h/include/base16-chalk.h"
+#include "vendor/base16-h/include/base16-circus.h"
+#include "vendor/base16-h/include/base16-classic-dark.h"
+#include "vendor/base16-h/include/base16-classic-light.h"
+#include "vendor/base16-h/include/base16-codeschool.h"
+#include "vendor/base16-h/include/base16-colors.h"
+#include "vendor/base16-h/include/base16-cupcake.h"
+#include "vendor/base16-h/include/base16-cupertino.h"
+#include "vendor/base16-h/include/base16-danqing.h"
+#include "vendor/base16-h/include/base16-danqing-light.h"
+#include "vendor/base16-h/include/base16-da-one-black.h"
+#include "vendor/base16-h/include/base16-da-one-gray.h"
+#include "vendor/base16-h/include/base16-da-one-ocean.h"
+#include "vendor/base16-h/include/base16-da-one-paper.h"
+#include "vendor/base16-h/include/base16-da-one-sea.h"
+#include "vendor/base16-h/include/base16-da-one-white.h"
+#include "vendor/base16-h/include/base16-darcula.h"
+#include "vendor/base16-h/include/base16-darkmoss.h"
+#include "vendor/base16-h/include/base16-darktooth.h"
+#include "vendor/base16-h/include/base16-darkviolet.h"
+#include "vendor/base16-h/include/base16-decaf.h"
+#include "vendor/base16-h/include/base16-default-dark.h"
+#include "vendor/base16-h/include/base16-default-light.h"
+#include "vendor/base16-h/include/base16-dirtysea.h"
+#include "vendor/base16-h/include/base16-dracula.h"
+#include "vendor/base16-h/include/base16-edge-dark.h"
+#include "vendor/base16-h/include/base16-edge-light.h"
+#include "vendor/base16-h/include/base16-eighties.h"
+#include "vendor/base16-h/include/base16-embers.h"
+#include "vendor/base16-h/include/base16-embers-light.h"
+#include "vendor/base16-h/include/base16-emil.h"
+#include "vendor/base16-h/include/base16-equilibrium-dark.h"
+#include "vendor/base16-h/include/base16-equilibrium-gray-dark.h"
+#include "vendor/base16-h/include/base16-equilibrium-gray-light.h"
+#include "vendor/base16-h/include/base16-equilibrium-light.h"
+#include "vendor/base16-h/include/base16-eris.h"
+#include "vendor/base16-h/include/base16-espresso.h"
+#include "vendor/base16-h/include/base16-eva-dim.h"
+#include "vendor/base16-h/include/base16-eva.h"
+#include "vendor/base16-h/include/base16-evenok-dark.h"
+#include "vendor/base16-h/include/base16-everforest-dark-hard.h"
+#include "vendor/base16-h/include/base16-everforest.h"
+#include "vendor/base16-h/include/base16-flat.h"
+#include "vendor/base16-h/include/base16-framer.h"
+#include "vendor/base16-h/include/base16-fruit-soda.h"
+#include "vendor/base16-h/include/base16-gigavolt.h"
+#include "vendor/base16-h/include/base16-github.h"
+#include "vendor/base16-h/include/base16-google-dark.h"
+#include "vendor/base16-h/include/base16-google-light.h"
+#include "vendor/base16-h/include/base16-gotham.h"
+#include "vendor/base16-h/include/base16-grayscale-dark.h"
+#include "vendor/base16-h/include/base16-grayscale-light.h"
+#include "vendor/base16-h/include/base16-greenscreen.h"
+#include "vendor/base16-h/include/base16-gruber.h"
+#include "vendor/base16-h/include/base16-gruvbox-dark-hard.h"
+#include "vendor/base16-h/include/base16-gruvbox-dark-medium.h"
+#include "vendor/base16-h/include/base16-gruvbox-dark-pale.h"
+#include "vendor/base16-h/include/base16-gruvbox-dark-soft.h"
+#include "vendor/base16-h/include/base16-gruvbox-light-hard.h"
+#include "vendor/base16-h/include/base16-gruvbox-light-medium.h"
+#include "vendor/base16-h/include/base16-gruvbox-light-soft.h"
+#include "vendor/base16-h/include/base16-gruvbox-material-dark-hard.h"
+#include "vendor/base16-h/include/base16-gruvbox-material-dark-medium.h"
+#include "vendor/base16-h/include/base16-gruvbox-material-dark-soft.h"
+#include "vendor/base16-h/include/base16-gruvbox-material-light-hard.h"
+#include "vendor/base16-h/include/base16-gruvbox-material-light-medium.h"
+#include "vendor/base16-h/include/base16-gruvbox-material-light-soft.h"
+#include "vendor/base16-h/include/base16-hardcore.h"
+#include "vendor/base16-h/include/base16-harmonic16-dark.h"
+#include "vendor/base16-h/include/base16-harmonic16-light.h"
+#include "vendor/base16-h/include/base16-heetch.h"
+#include "vendor/base16-h/include/base16-heetch-light.h"
+#include "vendor/base16-h/include/base16-helios.h"
+#include "vendor/base16-h/include/base16-hopscotch.h"
+#include "vendor/base16-h/include/base16-horizon-dark.h"
+#include "vendor/base16-h/include/base16-horizon-light.h"
+#include "vendor/base16-h/include/base16-horizon-terminal-dark.h"
+#include "vendor/base16-h/include/base16-horizon-terminal-light.h"
+#include "vendor/base16-h/include/base16-humanoid-dark.h"
+#include "vendor/base16-h/include/base16-humanoid-light.h"
+#include "vendor/base16-h/include/base16-ia-dark.h"
+#include "vendor/base16-h/include/base16-ia-light.h"
+#include "vendor/base16-h/include/base16-icy.h"
+#include "vendor/base16-h/include/base16-irblack.h"
+#include "vendor/base16-h/include/base16-isotope.h"
+#include "vendor/base16-h/include/base16-jabuti.h"
+#include "vendor/base16-h/include/base16-kanagawa.h"
+#include "vendor/base16-h/include/base16-katy.h"
+#include "vendor/base16-h/include/base16-kimber.h"
+#include "vendor/base16-h/include/base16-lime.h"
+#include "vendor/base16-h/include/base16-macintosh.h"
+#include "vendor/base16-h/include/base16-marrakesh.h"
+#include "vendor/base16-h/include/base16-materia.h"
+#include "vendor/base16-h/include/base16-material-darker.h"
+#include "vendor/base16-h/include/base16-material.h"
+#include "vendor/base16-h/include/base16-material-lighter.h"
+#include "vendor/base16-h/include/base16-material-palenight.h"
+#include "vendor/base16-h/include/base16-material-vivid.h"
+#include "vendor/base16-h/include/base16-measured-dark.h"
+#include "vendor/base16-h/include/base16-measured-light.h"
+#include "vendor/base16-h/include/base16-mellow-purple.h"
+#include "vendor/base16-h/include/base16-mexico-light.h"
+#include "vendor/base16-h/include/base16-mocha.h"
+#include "vendor/base16-h/include/base16-monokai.h"
+#include "vendor/base16-h/include/base16-moonlight.h"
+#include "vendor/base16-h/include/base16-mountain.h"
+#include "vendor/base16-h/include/base16-nebula.h"
+#include "vendor/base16-h/include/base16-nord.h"
+#include "vendor/base16-h/include/base16-nord-light.h"
+#include "vendor/base16-h/include/base16-nova.h"
+#include "vendor/base16-h/include/base16-ocean.h"
+#include "vendor/base16-h/include/base16-oceanicnext.h"
+#include "vendor/base16-h/include/base16-onedark.h"
+#include "vendor/base16-h/include/base16-one-light.h"
+#include "vendor/base16-h/include/base16-outrun-dark.h"
+#include "vendor/base16-h/include/base16-oxocarbon-dark.h"
+#include "vendor/base16-h/include/base16-oxocarbon-light.h"
+#include "vendor/base16-h/include/base16-pandora.h"
+#include "vendor/base16-h/include/base16-papercolor-dark.h"
+#include "vendor/base16-h/include/base16-papercolor-light.h"
+#include "vendor/base16-h/include/base16-paraiso.h"
+#include "vendor/base16-h/include/base16-pasque.h"
+#include "vendor/base16-h/include/base16-phd.h"
+#include "vendor/base16-h/include/base16-pico.h"
+#include "vendor/base16-h/include/base16-pinky.h"
+#include "vendor/base16-h/include/base16-pop.h"
+#include "vendor/base16-h/include/base16-porple.h"
+#include "vendor/base16-h/include/base16-precious-dark-eleven.h"
+#include "vendor/base16-h/include/base16-precious-dark-fifteen.h"
+#include "vendor/base16-h/include/base16-precious-light-warm.h"
+#include "vendor/base16-h/include/base16-precious-light-white.h"
+#include "vendor/base16-h/include/base16-primer-dark-dimmed.h"
+#include "vendor/base16-h/include/base16-primer-dark.h"
+#include "vendor/base16-h/include/base16-primer-light.h"
+#include "vendor/base16-h/include/base16-purpledream.h"
+#include "vendor/base16-h/include/base16-qualia.h"
+#include "vendor/base16-h/include/base16-railscasts.h"
+#include "vendor/base16-h/include/base16-rebecca.h"
+#include "vendor/base16-h/include/base16-rose-pine-dawn.h"
+#include "vendor/base16-h/include/base16-rose-pine.h"
+#include "vendor/base16-h/include/base16-rose-pine-moon.h"
+#include "vendor/base16-h/include/base16-saga.h"
+#include "vendor/base16-h/include/base16-sagelight.h"
+#include "vendor/base16-h/include/base16-sakura.h"
+#include "vendor/base16-h/include/base16-sandcastle.h"
+#include "vendor/base16-h/include/base16-selenized-black.h"
+#include "vendor/base16-h/include/base16-selenized-dark.h"
+#include "vendor/base16-h/include/base16-selenized-light.h"
+#include "vendor/base16-h/include/base16-selenized-white.h"
+#include "vendor/base16-h/include/base16-seti.h"
+#include "vendor/base16-h/include/base16-shadesmear-dark.h"
+#include "vendor/base16-h/include/base16-shadesmear-light.h"
+#include "vendor/base16-h/include/base16-shades-of-purple.h"
+#include "vendor/base16-h/include/base16-shapeshifter.h"
+#include "vendor/base16-h/include/base16-silk-dark.h"
+#include "vendor/base16-h/include/base16-silk-light.h"
+#include "vendor/base16-h/include/base16-snazzy.h"
+#include "vendor/base16-h/include/base16-solarflare.h"
+#include "vendor/base16-h/include/base16-solarflare-light.h"
+#include "vendor/base16-h/include/base16-solarized-dark.h"
+#include "vendor/base16-h/include/base16-solarized-light.h"
+#include "vendor/base16-h/include/base16-spaceduck.h"
+#include "vendor/base16-h/include/base16-spacemacs.h"
+#include "vendor/base16-h/include/base16-sparky.h"
+#include "vendor/base16-h/include/base16-standardized-dark.h"
+#include "vendor/base16-h/include/base16-standardized-light.h"
+#include "vendor/base16-h/include/base16-stella.h"
+#include "vendor/base16-h/include/base16-still-alive.h"
+#include "vendor/base16-h/include/base16-summercamp.h"
+#include "vendor/base16-h/include/base16-summerfruit-dark.h"
+#include "vendor/base16-h/include/base16-summerfruit-light.h"
+#include "vendor/base16-h/include/base16-synth-midnight-dark.h"
+#include "vendor/base16-h/include/base16-synth-midnight-light.h"
+#include "vendor/base16-h/include/base16-tango.h"
+#include "vendor/base16-h/include/base16-tarot.h"
+#include "vendor/base16-h/include/base16-tender.h"
+#include "vendor/base16-h/include/base16-tokyo-city-dark.h"
+#include "vendor/base16-h/include/base16-tokyo-city-light.h"
+#include "vendor/base16-h/include/base16-tokyo-city-terminal-dark.h"
+#include "vendor/base16-h/include/base16-tokyo-city-terminal-light.h"
+#include "vendor/base16-h/include/base16-tokyodark.h"
+#include "vendor/base16-h/include/base16-tokyodark-terminal.h"
+#include "vendor/base16-h/include/base16-tokyo-night-dark.h"
+#include "vendor/base16-h/include/base16-tokyo-night-light.h"
+#include "vendor/base16-h/include/base16-tokyo-night-moon.h"
+#include "vendor/base16-h/include/base16-tokyo-night-storm.h"
+#include "vendor/base16-h/include/base16-tokyo-night-terminal-dark.h"
+#include "vendor/base16-h/include/base16-tokyo-night-terminal-light.h"
+#include "vendor/base16-h/include/base16-tokyo-night-terminal-storm.h"
+#include "vendor/base16-h/include/base16-tomorrow.h"
+#include "vendor/base16-h/include/base16-tomorrow-night-eighties.h"
 #include "vendor/base16-h/include/base16-tomorrow-night.h"
+#include "vendor/base16-h/include/base16-tube.h"
+#include "vendor/base16-h/include/base16-twilight.h"
+#include "vendor/base16-h/include/base16-unikitty-dark.h"
+#include "vendor/base16-h/include/base16-unikitty-light.h"
+#include "vendor/base16-h/include/base16-unikitty-reversible.h"
+#include "vendor/base16-h/include/base16-uwunicorn.h"
+#include "vendor/base16-h/include/base16-vesper.h"
+#include "vendor/base16-h/include/base16-vice.h"
+#include "vendor/base16-h/include/base16-vulcan.h"
+#include "vendor/base16-h/include/base16-windows-10.h"
+#include "vendor/base16-h/include/base16-windows-10-light.h"
+#include "vendor/base16-h/include/base16-windows-95.h"
+#include "vendor/base16-h/include/base16-windows-95-light.h"
+#include "vendor/base16-h/include/base16-windows-highcontrast.h"
+#include "vendor/base16-h/include/base16-windows-highcontrast-light.h"
+#include "vendor/base16-h/include/base16-windows-nt.h"
+#include "vendor/base16-h/include/base16-windows-nt-light.h"
+#include "vendor/base16-h/include/base16-woodland.h"
+#include "vendor/base16-h/include/base16-xcode-dusk.h"
+#include "vendor/base16-h/include/base16-zenbones.h"
+#include "vendor/base16-h/include/base16-zenburn.h"
+#undef NK_BASE16_HEADER_ONLY
 
 extern const base16_scheme* nuklear_base16_schemes[NK_BASE16_COUNT + 1];
 NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const base16_scheme* scheme);
@@ -52,6 +321,75 @@ NK_API struct nk_color nuklear_base16_color(const base16_scheme* scheme, int ind
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+NK_API struct nk_color nuklear_base16_color(const base16_scheme* scheme, int index) {
+    return nk_rgba(scheme->base[index].r, scheme->base[index].g, scheme->base[index].b, 255);
+}
+
+NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const base16_scheme* scheme) {
+    if (scheme == NULL) {
+        return;
+    }
+    struct nk_color table[NK_COLOR_COUNT];
+
+    // base00 - Default Background
+    // base01 - Lighter Background (Used for status bars, line number and folding marks)
+    // base02 - Selection Background
+    // base03 - Comments, Invisibles, Line Highlighting
+    // base04 - Dark Foreground (Used for status bars)
+    // base05 - Default Foreground, Caret, Delimiters, Operators
+    // base06 - Light Foreground (Not often used)
+    // base07 - Brightest Foreground (Not often used)
+    // base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+    // base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url
+    // base0A - Classes, Markup Bold, Search Text Background
+    // base0B - Strings, Inherited Class, Markup Code, Diff Inserted
+    // base0C - Support, Regular Expressions, Escape Characters, Markup Quotes
+    // base0D - Functions, Methods, Attribute IDs, Headings
+    // base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed
+    // base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+
+    table[NK_COLOR_TEXT] = nuklear_base16_color(scheme, 5);
+    table[NK_COLOR_WINDOW] = nuklear_base16_color(scheme, 0);
+    table[NK_COLOR_HEADER] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_BORDER] = nuklear_base16_color(scheme, 2);
+
+    table[NK_COLOR_BUTTON] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_BUTTON_HOVER] = nuklear_base16_color(scheme, 2);
+    table[NK_COLOR_BUTTON_ACTIVE] = nuklear_base16_color(scheme, 3);
+
+    table[NK_COLOR_TOGGLE] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_TOGGLE_HOVER] = nuklear_base16_color(scheme, 2);
+    table[NK_COLOR_TOGGLE_CURSOR] = nuklear_base16_color(scheme, 3);
+
+    table[NK_COLOR_SELECT] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_SELECT_ACTIVE] = nuklear_base16_color(scheme, 2);
+
+    table[NK_COLOR_SLIDER] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_SLIDER_CURSOR] = nuklear_base16_color(scheme, 2);
+    table[NK_COLOR_SLIDER_CURSOR_HOVER] = nuklear_base16_color(scheme, 3);
+    table[NK_COLOR_SLIDER_CURSOR_ACTIVE] = nuklear_base16_color(scheme, 4);
+
+    table[NK_COLOR_PROPERTY] = nuklear_base16_color(scheme, 1);
+
+    table[NK_COLOR_EDIT] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_EDIT_CURSOR] = nuklear_base16_color(scheme, 2);
+
+    table[NK_COLOR_COMBO] = nuklear_base16_color(scheme, 1);
+
+    table[NK_COLOR_CHART] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_CHART_COLOR] = nuklear_base16_color(scheme, 5);
+    table[NK_COLOR_CHART_COLOR_HIGHLIGHT] = nuklear_base16_color(scheme, 9);
+
+    table[NK_COLOR_SCROLLBAR] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_SCROLLBAR_CURSOR] = nuklear_base16_color(scheme, 2);
+    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = nuklear_base16_color(scheme, 3);
+    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_base16_color(scheme, 4);
+
+    table[NK_COLOR_TAB_HEADER] = nuklear_base16_color(scheme, 1);
+
+    nk_style_from_table(ctx, table);
+}
 
 #define BASE16_IMPLEMENTATION
 #include "vendor/base16-h/include/base16-3024.h"
@@ -591,58 +929,6 @@ const base16_scheme* nuklear_base16_schemes[NK_BASE16_COUNT + 1] = {
 
     NULL
 };
-
-NK_API struct nk_color nuklear_base16_color(const base16_scheme* scheme, int index) {
-    return nk_rgba(scheme->base[index].r, scheme->base[index].g, scheme->base[index].b, 255);
-}
-
-NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const base16_scheme* scheme) {
-    if (scheme == NULL) {
-        return;
-    }
-    struct nk_color table[NK_COLOR_COUNT];
-
-    table[NK_COLOR_TEXT] = nuklear_base16_color(scheme, 5);
-    table[NK_COLOR_WINDOW] = nuklear_base16_color(scheme, 0);
-    table[NK_COLOR_HEADER] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_BORDER] = nuklear_base16_color(scheme, 2);
-    
-    table[NK_COLOR_BUTTON] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_BUTTON_HOVER] = nuklear_base16_color(scheme, 2);
-    table[NK_COLOR_BUTTON_ACTIVE] = nuklear_base16_color(scheme, 3);
-
-    table[NK_COLOR_TOGGLE] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_TOGGLE_HOVER] = nuklear_base16_color(scheme, 2);
-    table[NK_COLOR_TOGGLE_CURSOR] = nuklear_base16_color(scheme, 3);
-
-    table[NK_COLOR_SELECT] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_SELECT_ACTIVE] = nuklear_base16_color(scheme, 2);
-
-    table[NK_COLOR_SLIDER] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_SLIDER_CURSOR] = nuklear_base16_color(scheme, 2);
-    table[NK_COLOR_SLIDER_CURSOR_HOVER] = nuklear_base16_color(scheme, 3);
-    table[NK_COLOR_SLIDER_CURSOR_ACTIVE] = nuklear_base16_color(scheme, 4);
-
-    table[NK_COLOR_PROPERTY] = nuklear_base16_color(scheme, 1);
-
-    table[NK_COLOR_EDIT] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_EDIT_CURSOR] = nuklear_base16_color(scheme, 2);
-
-    table[NK_COLOR_COMBO] = nuklear_base16_color(scheme, 1);
-
-    table[NK_COLOR_CHART] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_CHART_COLOR] = nuklear_base16_color(scheme, 5);
-    table[NK_COLOR_CHART_COLOR_HIGHLIGHT] = nuklear_base16_color(scheme, 8);
-
-    table[NK_COLOR_SCROLLBAR] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_SCROLLBAR_CURSOR] = nuklear_base16_color(scheme, 2);
-    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = nuklear_base16_color(scheme, 3);
-    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_base16_color(scheme, 4);
-
-    table[NK_COLOR_TAB_HEADER] = nuklear_base16_color(scheme, 1);
-
-    nk_style_from_table(ctx, table);
-}
 
 #ifdef __cplusplus
 }

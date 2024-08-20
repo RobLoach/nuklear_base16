@@ -17,7 +17,7 @@
 void UpdateDrawFrame(void);
 
 struct nk_context *ctx;
-nk_bool closeWindow = nk_false;
+nk_bool shouldClose = nk_false;
 
 int main() {
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
@@ -36,7 +36,7 @@ int main() {
         while (!WindowShouldClose()) {
             UpdateDrawFrame();
 
-            if (closeWindow) {
+            if (shouldClose) {
                 break;
             }
         }

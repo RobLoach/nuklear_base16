@@ -1,6 +1,11 @@
 #define NK_BASE16_IMPLEMENTATION
 #include "../../nuklear_base16.h"
 
+#include <math.h>
+#include <string.h>
+#include <time.h>
+#include <limits.h>
+#include <stdio.h>
 #include "../../vendor/nuklear/demo/common/overview.c"
 
 int selected_scheme = -1;

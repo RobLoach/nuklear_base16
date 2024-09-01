@@ -86,7 +86,9 @@ int main(int argc, char *argv[]) {
         nk_input_end(ctx);
 
         /* Render the gamepad demo */
-        nuklear_base16_demo(ctx);
+        int screenWidth, screenHeight;
+        SDL_GetRendererOutputSize(renderer, &screenWidth, &screenHeight);
+        nuklear_base16_demo(ctx, screenWidth, screenHeight);
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);

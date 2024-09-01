@@ -54,7 +54,7 @@ void UpdateDrawFrame(void) {
     // Update the Nuklear context, along with input
     UpdateNuklear(ctx);
 
-    nuklear_base16_demo(ctx);
+    nuklear_base16_demo(ctx, GetScreenWidth(), GetScreenHeight());
 
     // Render
     BeginDrawing();

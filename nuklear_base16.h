@@ -27,7 +27,7 @@
 #ifndef NUKLEAR_BASE16_H__
 #define NUKLEAR_BASE16_H__
 
-#define NK_BASE16_COUNT 266
+#define NK_BASE16_COUNT 278
 
 #ifdef __cplusplus
 extern "C" {
@@ -302,6 +302,18 @@ extern "C" {
 #include "vendor/base16-h/include/base16-xcode-dusk.h"
 #include "vendor/base16-h/include/base16-zenbones.h"
 #include "vendor/base16-h/include/base16-zenburn.h"
+#include "vendor/base16-h/include/base24-brogrammer.h"
+#include "vendor/base16-h/include/base24-chalk.h"
+#include "vendor/base16-h/include/base24-dracula.h"
+#include "vendor/base16-h/include/base24-espresso.h"
+#include "vendor/base16-h/include/base24-flat.h"
+#include "vendor/base16-h/include/base24-framer.h"
+#include "vendor/base16-h/include/base24-github.h"
+#include "vendor/base16-h/include/base24-hardcore.h"
+#include "vendor/base16-h/include/base24-one-black.h"
+#include "vendor/base16-h/include/base24-one-dark.h"
+#include "vendor/base16-h/include/base24-one-light.h"
+#include "vendor/base16-h/include/base24-sparky.h"
 #undef NK_BASE16_HEADER_ONLY
 
 extern const base16_scheme* nuklear_base16_schemes[NK_BASE16_COUNT + 1];
@@ -658,6 +670,18 @@ NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const base16_schem
 #include "vendor/base16-h/include/base16-xcode-dusk.h"
 #include "vendor/base16-h/include/base16-zenbones.h"
 #include "vendor/base16-h/include/base16-zenburn.h"
+#include "vendor/base16-h/include/base24-brogrammer.h"
+#include "vendor/base16-h/include/base24-chalk.h"
+#include "vendor/base16-h/include/base24-dracula.h"
+#include "vendor/base16-h/include/base24-espresso.h"
+#include "vendor/base16-h/include/base24-flat.h"
+#include "vendor/base16-h/include/base24-framer.h"
+#include "vendor/base16-h/include/base24-github.h"
+#include "vendor/base16-h/include/base24-hardcore.h"
+#include "vendor/base16-h/include/base24-one-black.h"
+#include "vendor/base16-h/include/base24-one-dark.h"
+#include "vendor/base16-h/include/base24-one-light.h"
+#include "vendor/base16-h/include/base24-sparky.h"
 
 const base16_scheme* nuklear_base16_schemes[NK_BASE16_COUNT + 1] = {
     &base16_3024,
@@ -926,6 +950,18 @@ const base16_scheme* nuklear_base16_schemes[NK_BASE16_COUNT + 1] = {
     &base16_xcode_dusk,
     &base16_zenbones,
     &base16_zenburn,
+    &base24_brogrammer,
+    &base24_chalk,
+    &base24_dracula,
+    &base24_espresso,
+    &base24_flat,
+    &base24_framer,
+    &base24_github,
+    &base24_hardcore,
+    &base24_one_black,
+    &base24_one_dark,
+    &base24_one_light,
+    &base24_sparky,
 
     NULL
 };

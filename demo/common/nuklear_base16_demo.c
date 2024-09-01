@@ -10,18 +10,17 @@
 
 int selected_scheme = -1;
 
-void nuklear_base16_demo(struct nk_context* ctx) {
-    int flags = NK_WINDOW_TITLE | NK_WINDOW_BORDER | NK_WINDOW_MOVABLE;
+void nuklear_base16_demo(struct nk_context* ctx, int screenWidth, int screenHeight) {
+    int flags = NK_WINDOW_TITLE | NK_WINDOW_BORDER;
     int padding = 10;
     int width = 300;
-    int height = WINDOW_HEIGHT - 2 * padding;
 
     if (selected_scheme == -1) {
         selected_scheme = 0;
         nuklear_base16_set_scheme(ctx, nuklear_base16_schemes[selected_scheme]);
     }
 
-    if (nk_begin(ctx, "Base16", nk_rect(WINDOW_WIDTH - width - padding, padding, width, height), flags)) {
+    if (nk_begin(ctx, "Base16", nk_rect(screenWidth - width, 0, width, screenHeight), flags)) {
         nk_layout_row_dynamic(ctx, 0, 1);
 
         for (int i = 0; i < NK_BASE16_COUNT; i++) {

@@ -400,6 +400,11 @@ NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const base16_schem
 
     table[NK_COLOR_TAB_HEADER] = nuklear_base16_color(scheme, 1);
 
+    table[NK_COLOR_KNOB] = table[NK_COLOR_SLIDER];
+    table[NK_COLOR_KNOB_CURSOR] = table[NK_COLOR_SLIDER_CURSOR];
+    table[NK_COLOR_KNOB_CURSOR_HOVER] = table[NK_COLOR_SLIDER_CURSOR_HOVER];
+    table[NK_COLOR_KNOB_CURSOR_ACTIVE] = table[NK_COLOR_SLIDER_CURSOR_ACTIVE];
+
     nk_style_from_table(ctx, table);
 }
 

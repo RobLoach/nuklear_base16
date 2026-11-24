@@ -6,13 +6,16 @@
 #include <time.h>
 #include <limits.h>
 #include <stdio.h>
-#include "../../vendor/nuklear/demo/common/overview.c"
+/* The overview must match the nuklear.h in use, so backends bundling their own may override it */
+#ifndef NK_BASE16_DEMO_OVERVIEW
+#define NK_BASE16_DEMO_OVERVIEW "../../vendor/nuklear/demo/common/overview.c"
+#endif
+#include NK_BASE16_DEMO_OVERVIEW
 
 static int selected_scheme = -1;
 
 void nuklear_base16_demo(struct nk_context* ctx, int screenWidth, int screenHeight) {
     int flags = NK_WINDOW_TITLE | NK_WINDOW_BORDER;
-    int padding = 10;
     int width = 300;
 
     if (selected_scheme == -1) {

@@ -44,6 +44,10 @@ for (int i = 0; i < NK_BASE16_COUNT; i++) {
 make -C demo/sdl
 ./demo/sdl/nuklear_base16_sdl
 
+# SDL3
+make -C demo/sdl3_renderer
+./demo/sdl3_renderer/nuklear_base16_sdl3_renderer
+
 # raylib
 cmake -S demo/raylib -B build
 cmake --build build

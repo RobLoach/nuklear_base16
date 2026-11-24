@@ -27,8 +27,8 @@
  * SOFTWARE.
  */
 
-#ifndef NUKLEAR_BASE16_H__
-#define NUKLEAR_BASE16_H__
+#ifndef NUKLEAR_BASE16_H
+#define NUKLEAR_BASE16_H
 
 /* Compile the tinted-c scheme data along with the nuklear_base16 implementation. */
 #if defined(NK_BASE16_IMPLEMENTATION) && !defined(TINTED_IMPLEMENTATION)
@@ -61,14 +61,17 @@ extern "C" {
 #endif
 
 NK_API struct nk_color nuklear_base16_color(const tinted_scheme* scheme, int index) {
+    if (scheme == NULL || index < 0 || index >= 24) {
+        return nk_rgba(0, 0, 0, 255);
+    }
     return nk_rgba(scheme->base[index].r, scheme->base[index].g, scheme->base[index].b, 255);
 }
 
 NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const tinted_scheme* scheme) {
+    struct nk_color table[NK_COLOR_COUNT];
     if (scheme == NULL) {
         return;
     }
-    struct nk_color table[NK_COLOR_COUNT];
 
     // base00 - Default Background
     // base01 - Lighter Background (Used for status bars, line number and folding marks)

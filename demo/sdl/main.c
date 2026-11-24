@@ -43,9 +43,9 @@ int main(int argc, char *argv[]) {
 
     /* SDL setup */
     SDL_SetHint(SDL_HINT_VIDEO_HIGHDPI_DISABLED, "0");
-    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_GAMECONTROLLER);
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
 
-    win = SDL_CreateWindow("nuklear_gamepad_demo",
+    win = SDL_CreateWindow("nuklear_base16_demo",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE | SDL_WINDOW_SHOWN|SDL_WINDOW_ALLOW_HIGHDPI);
     if (win == NULL) {
@@ -80,12 +80,11 @@ int main(int argc, char *argv[]) {
             if (evt.type == SDL_QUIT) goto cleanup;
             if (evt.type == SDL_KEYUP && evt.key.keysym.scancode == SDL_SCANCODE_ESCAPE) running = 0;
 
-            /* Allow Gamepads to respond to gamepads being connected/disconnected */
             nk_sdl_handle_event(&evt);
         }
         nk_input_end(ctx);
 
-        /* Render the gamepad demo */
+        /* Render the base16 demo */
         int screenWidth, screenHeight;
         SDL_GetRendererOutputSize(renderer, &screenWidth, &screenHeight);
         nuklear_base16_demo(ctx, screenWidth, screenHeight);

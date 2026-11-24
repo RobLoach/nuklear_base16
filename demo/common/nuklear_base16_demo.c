@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "../../vendor/nuklear/demo/common/overview.c"
 
-int selected_scheme = -1;
+static int selected_scheme = -1;
 
 void nuklear_base16_demo(struct nk_context* ctx, int screenWidth, int screenHeight) {
     int flags = NK_WINDOW_TITLE | NK_WINDOW_BORDER;
@@ -31,9 +31,8 @@ void nuklear_base16_demo(struct nk_context* ctx, int screenWidth, int screenHeig
             }
 
         }
-
-        nk_end(ctx);
     }
+    nk_end(ctx);
 
     overview(ctx);
 }

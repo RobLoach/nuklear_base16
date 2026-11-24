@@ -25,7 +25,9 @@ else
 	endif
 endif
 
-$(BIN): clean
+.PHONY: clean test
+
+$(BIN): $(SRC)
 	$(CC) $(SRC) $(CFLAGS) -o $(BIN) $(LIBS)
 
 clean:

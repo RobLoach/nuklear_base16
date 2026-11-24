@@ -12,7 +12,7 @@ if (NOT raylib_FOUND)
     FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG 6.0
+        GIT_TAG 6.2
     )
     FetchContent_GetProperties(raylib)
     if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
@@ -30,7 +30,7 @@ if (NOT raylib_nuklear_FOUND)
     FetchContent_Declare(
         raylib_nuklear
         GIT_REPOSITORY https://github.com/RobLoach/raylib-nuklear.git
-        GIT_TAG v6.0.1
+        GIT_TAG cf63c69bde3db51851832b01b63d600803e14168 # master after v6.0.1
     )
     FetchContent_GetProperties(raylib_nuklear)
     if (NOT raylib_nuklear_POPULATED) # Have we downloaded raylib yet?
@@ -53,6 +53,13 @@ endif()
 
 # Setup the example
 add_executable(${PROJECT_NAME} main.c)
+
+# Use the overview demo matching raylib-nuklear's bundled nuklear.h
+if (raylib_nuklear_SOURCE_DIR)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        NK_BASE16_DEMO_OVERVIEW="${raylib_nuklear_SOURCE_DIR}/vendor/nuklear/demo/common/overview.c"
+    )
+endif()
 
 # Link dependencies
 target_link_libraries(${PROJECT_NAME} PUBLIC

@@ -1,6 +1,8 @@
 [submodule "vendor/nuklear"]
 	path = vendor/nuklear
 	url = https://github.com/Immediate-Mode-UI/Nuklear.git
+    ignore = dirty
 [submodule "vendor/tinted-c"]
 	path = vendor/tinted-c
 	url = https://github.com/RobLoach/tinted-c.git
+    ignore = dirty

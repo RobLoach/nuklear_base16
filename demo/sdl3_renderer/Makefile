@@ -1,4 +1,4 @@
-BIN = nuklear_base16_sdl3_renderer
+BIN = nuklear_tinted_sdl3_renderer
 
 PKG_CONFIG ?= pkg-config
 
@@ -14,7 +14,7 @@ endif
 
 .PHONY: clean test
 
-$(BIN): $(SRC) ../common/nuklear_base16_demo.c ../../nuklear_base16.h
+$(BIN): $(SRC) ../common/nuklear_tinted_demo.c ../../nuklear_tinted.h
 	$(CC) $(SRC) $(CFLAGS) -o $(BIN) $(LIBS)
 
 clean:

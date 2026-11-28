@@ -5,7 +5,7 @@ build/Makefile:
 	cmake -B build -S .
 
 test: compile
-	./build/nuklear_base16_demo_raylib
+	./build/nuklear_tinted_demo_raylib
 
 clean:
 	rm -rf build

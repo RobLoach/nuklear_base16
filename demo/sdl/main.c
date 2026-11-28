@@ -26,7 +26,7 @@
 #define WINDOW_WIDTH 960
 #define WINDOW_HEIGHT 720
 
-#include "../common/nuklear_base16_demo.c"
+#include "../common/nuklear_tinted_demo.c"
 
 int main(int argc, char *argv[]) {
     NK_UNUSED(argc);
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
     SDL_SetHint(SDL_HINT_VIDEO_HIGHDPI_DISABLED, "0");
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
 
-    win = SDL_CreateWindow("nuklear_base16_demo",
+    win = SDL_CreateWindow("nuklear_tinted_demo",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE | SDL_WINDOW_SHOWN|SDL_WINDOW_ALLOW_HIGHDPI);
     if (win == NULL) {
@@ -84,10 +84,10 @@ int main(int argc, char *argv[]) {
         }
         nk_input_end(ctx);
 
-        /* Render the base16 demo */
+        /* Render the tinted demo */
         int screenWidth, screenHeight;
         SDL_GetRendererOutputSize(renderer, &screenWidth, &screenHeight);
-        nuklear_base16_demo(ctx, screenWidth, screenHeight);
+        nuklear_tinted_demo(ctx, screenWidth, screenHeight);
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);

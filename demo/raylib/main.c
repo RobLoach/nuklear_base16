@@ -12,7 +12,7 @@
 #define WINDOW_WIDTH 960
 #define WINDOW_HEIGHT 720
 
-#include "../common/nuklear_base16_demo.c"
+#include "../common/nuklear_tinted_demo.c"
 
 void UpdateDrawFrame(void);
 
@@ -21,7 +21,7 @@ nk_bool shouldClose = nk_false;
 
 int main() {
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "nuklear_base16_demo");
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "nuklear_tinted_demo");
     SetWindowMinSize(200, 200);
 
     // Create the Nuklear Context
@@ -54,7 +54,7 @@ void UpdateDrawFrame(void) {
     // Update the Nuklear context, along with input
     UpdateNuklear(ctx);
 
-    nuklear_base16_demo(ctx, GetScreenWidth(), GetScreenHeight());
+    nuklear_tinted_demo(ctx, GetScreenWidth(), GetScreenHeight());
 
     // Render
     BeginDrawing();

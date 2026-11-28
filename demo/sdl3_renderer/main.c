@@ -45,7 +45,7 @@
 #define WINDOW_WIDTH 960
 #define WINDOW_HEIGHT 720
 
-#include "../common/nuklear_base16_demo.c"
+#include "../common/nuklear_tinted_demo.c"
 
 struct app_state {
     SDL_Window *window;
@@ -74,7 +74,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
     }
     *appstate = app;
 
-    if (!SDL_CreateWindowAndRenderer("nuklear_base16_demo", WINDOW_WIDTH, WINDOW_HEIGHT,
+    if (!SDL_CreateWindowAndRenderer("nuklear_tinted_demo", WINDOW_WIDTH, WINDOW_HEIGHT,
             SDL_WINDOW_RESIZABLE, &app->window, &app->renderer)) {
         return app_fail();
     }
@@ -134,10 +134,10 @@ SDL_AppResult SDL_AppIterate(void *appstate) {
 
     nk_input_end(app->ctx);
 
-    /* Render the base16 demo in logical (scaled) coordinates */
+    /* Render the tinted demo in logical (scaled) coordinates */
     SDL_GetCurrentRenderOutputSize(app->renderer, &output_width, &output_height);
     SDL_GetRenderScale(app->renderer, &scale_x, &scale_y);
-    nuklear_base16_demo(app->ctx, (int)(output_width / scale_x), (int)(output_height / scale_y));
+    nuklear_tinted_demo(app->ctx, (int)(output_width / scale_x), (int)(output_height / scale_y));
 
     SDL_SetRenderDrawColor(app->renderer, 0, 0, 0, 255);
     SDL_RenderClear(app->renderer);

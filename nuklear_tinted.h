@@ -101,8 +101,8 @@ NK_API void nuklear_tinted_set_scheme(struct nk_context* ctx, const tinted_schem
     table[NK_COLOR_SELECT_ACTIVE] = nuklear_tinted_color(scheme, 2);
 
     table[NK_COLOR_SLIDER] = nuklear_tinted_color(scheme, 1);
-    table[NK_COLOR_SLIDER_CURSOR] = nuklear_tinted_color(scheme, 4);
-    table[NK_COLOR_SLIDER_CURSOR_HOVER] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_SLIDER_CURSOR] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_SLIDER_CURSOR_HOVER] = nuklear_tinted_color(scheme, 0x0D);
     table[NK_COLOR_SLIDER_CURSOR_ACTIVE] = nuklear_tinted_color(scheme, 0x0D);
 
     table[NK_COLOR_PROPERTY] = nuklear_tinted_color(scheme, 1);
@@ -117,9 +117,9 @@ NK_API void nuklear_tinted_set_scheme(struct nk_context* ctx, const tinted_schem
     table[NK_COLOR_CHART_COLOR_HIGHLIGHT] = nuklear_tinted_color(scheme, 9);
 
     table[NK_COLOR_SCROLLBAR] = nuklear_tinted_color(scheme, 1);
-    table[NK_COLOR_SCROLLBAR_CURSOR] = nuklear_tinted_color(scheme, 3);
-    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = nuklear_tinted_color(scheme, 4);
-    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_SCROLLBAR_CURSOR] = nuklear_tinted_color(scheme, 4);
+    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_tinted_color(scheme, 0x0D);
 
     table[NK_COLOR_TAB_HEADER] = nuklear_tinted_color(scheme, 1);
 

@@ -30,35 +30,8 @@
 #ifndef NUKLEAR_TINTED_H
 #define NUKLEAR_TINTED_H
 
-/* Compile the tinted-c scheme data along with the nuklear_tinted implementation. */
-#if defined(NK_TINTED_IMPLEMENTATION) && !defined(TINTED_IMPLEMENTATION)
-#define TINTED_IMPLEMENTATION
-#endif
-#ifndef NK_TINTED_NO_SCHEMES
-#include "vendor/tinted-c/include/tinted.h"
-
-#define NK_TINTED_COUNT TINTED_COUNT
-#define nuklear_tinted_schemes tinted_schemes
-#else
-/* Only the types, matching tinted-c, so the caller includes just the schemes it uses. */
-#ifndef TINTED_C_COLOR_H__
-#define TINTED_C_COLOR_H__
-typedef struct tinted_color {
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
-} tinted_color;
-#endif
-
-#ifndef TINTED_C_SCHEME_H__
-#define TINTED_C_SCHEME_H__
-typedef struct tinted_scheme {
-    const char *name;
-    tinted_color base[24];
-    unsigned char system;
-} tinted_scheme;
-#endif
-#endif
+/* Only the scheme types; the caller includes the schemes it uses. */
+#include "vendor/tinted-c/include/tinted_types.h"
 
 #ifdef __cplusplus
 extern "C" {

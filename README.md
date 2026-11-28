@@ -18,7 +18,7 @@ git submodule update --init
 
 ## Usage
 
-Include `nuklear.h` first, then define `NK_TINTED_IMPLEMENTATION` in exactly one source file before including `nuklear_tinted.h`:
+Include `nuklear.h` first, then define `NK_TINTED_IMPLEMENTATION` in exactly one source file before including `nuklear_tinted.h`. Include the [tinted-c](https://github.com/RobLoach/tinted-c) schemes you use, with `TINTED_IMPLEMENTATION` to compile their data:
 
 ``` c
 #include "nuklear.h"
@@ -26,28 +26,21 @@ Include `nuklear.h` first, then define `NK_TINTED_IMPLEMENTATION` in exactly one
 #define NK_TINTED_IMPLEMENTATION
 #include "nuklear_tinted.h"
 
-nuklear_tinted_set_scheme(ctx, &base16_tomorrow_night);
-```
-
-Every scheme is available as `nuklear_tinted_schemes`, with `NK_TINTED_COUNT` entries:
-
-``` c
-for (int i = 0; i < NK_TINTED_COUNT; i++) {
-    printf("%s\n", nuklear_tinted_schemes[i]->name);
-}
-```
-
-### Using only specific schemes
-
-Define `NK_TINTED_NO_SCHEMES` to skip compiling all of the schemes, and include only the [tinted-c](https://github.com/RobLoach/tinted-c) headers you use. `nuklear_tinted_schemes` and `NK_TINTED_COUNT` aren't available in this mode.
-
-``` c
-#define NK_TINTED_IMPLEMENTATION
-#define NK_TINTED_NO_SCHEMES
-#include "nuklear_tinted.h"
+#define TINTED_IMPLEMENTATION
 #include "vendor/tinted-c/include/base16-dracula.h"
 
 nuklear_tinted_set_scheme(ctx, &base16_dracula);
+```
+
+To have every scheme, include `tinted.h`, which provides them as `tinted_schemes`, with `TINTED_COUNT` entries:
+
+``` c
+#define TINTED_IMPLEMENTATION
+#include "vendor/tinted-c/include/tinted.h"
+
+for (int i = 0; i < TINTED_COUNT; i++) {
+    printf("%s\n", tinted_schemes[i]->name);
+}
 ```
 
 ## Demos

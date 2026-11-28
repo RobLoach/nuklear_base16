@@ -1,5 +1,5 @@
 # Install
-BIN = nuklear_base16_sdl
+BIN = nuklear_tinted_sdl
 
 # Flags
 

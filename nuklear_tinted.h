@@ -1,8 +1,8 @@
 /**
- * nuklear_base16: Base16 Color Themes for Nuklear
- * https://github.com/robloach/nuklear_base16
+ * nuklear_tinted: Base16 and Base24 Color Themes for Nuklear
+ * https://github.com/robloach/nuklear_tinted
  *
- * @file nuklear_base16.h
+ * @file nuklear_tinted.h
  *
  * License: MIT
  *
@@ -27,24 +27,18 @@
  * SOFTWARE.
  */
 
-#ifndef NUKLEAR_BASE16_H
-#define NUKLEAR_BASE16_H
+#ifndef NUKLEAR_TINTED_H
+#define NUKLEAR_TINTED_H
 
-/* Compile the tinted-c scheme data along with the nuklear_base16 implementation. */
-#if defined(NK_BASE16_IMPLEMENTATION) && !defined(TINTED_IMPLEMENTATION)
-#define TINTED_IMPLEMENTATION
-#endif
-#include "vendor/tinted-c/include/tinted.h"
-
-#define NK_BASE16_COUNT TINTED_COUNT
-#define nuklear_base16_schemes tinted_schemes
+/* Only the scheme types; the caller includes the schemes it uses. */
+#include "vendor/tinted-c/include/tinted_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const tinted_scheme* scheme);
-NK_API struct nk_color nuklear_base16_color(const tinted_scheme* scheme, int index);
+NK_API void nuklear_tinted_set_scheme(struct nk_context* ctx, const tinted_scheme* scheme);
+NK_API struct nk_color nuklear_tinted_color(const tinted_scheme* scheme, int index);
 
 #ifdef __cplusplus
 }
@@ -52,22 +46,22 @@ NK_API struct nk_color nuklear_base16_color(const tinted_scheme* scheme, int ind
 
 #endif
 
-#if defined(NK_BASE16_IMPLEMENTATION)
-#ifndef NK_BASE16_IMPLEMENTATION_ONCE
-#define NK_BASE16_IMPLEMENTATION_ONCE
+#if defined(NK_TINTED_IMPLEMENTATION)
+#ifndef NK_TINTED_IMPLEMENTATION_ONCE
+#define NK_TINTED_IMPLEMENTATION_ONCE
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-NK_API struct nk_color nuklear_base16_color(const tinted_scheme* scheme, int index) {
+NK_API struct nk_color nuklear_tinted_color(const tinted_scheme* scheme, int index) {
     if (scheme == NULL || index < 0 || index >= 24) {
         return nk_rgba(0, 0, 0, 255);
     }
     return nk_rgba(scheme->base[index].r, scheme->base[index].g, scheme->base[index].b, 255);
 }
 
-NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const tinted_scheme* scheme) {
+NK_API void nuklear_tinted_set_scheme(struct nk_context* ctx, const tinted_scheme* scheme) {
     struct nk_color table[NK_COLOR_COUNT];
     if (scheme == NULL) {
         return;
@@ -90,44 +84,44 @@ NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const tinted_schem
     // base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed
     // base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 
-    table[NK_COLOR_TEXT] = nuklear_base16_color(scheme, 5);
-    table[NK_COLOR_WINDOW] = nuklear_base16_color(scheme, 0);
-    table[NK_COLOR_HEADER] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_BORDER] = nuklear_base16_color(scheme, 2);
+    table[NK_COLOR_TEXT] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_WINDOW] = nuklear_tinted_color(scheme, 0);
+    table[NK_COLOR_HEADER] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_BORDER] = nuklear_tinted_color(scheme, 2);
 
-    table[NK_COLOR_BUTTON] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_BUTTON_HOVER] = nuklear_base16_color(scheme, 2);
-    table[NK_COLOR_BUTTON_ACTIVE] = nuklear_base16_color(scheme, 3);
+    table[NK_COLOR_BUTTON] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_BUTTON_HOVER] = nuklear_tinted_color(scheme, 2);
+    table[NK_COLOR_BUTTON_ACTIVE] = nuklear_tinted_color(scheme, 3);
 
-    table[NK_COLOR_TOGGLE] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_TOGGLE_HOVER] = nuklear_base16_color(scheme, 2);
-    table[NK_COLOR_TOGGLE_CURSOR] = nuklear_base16_color(scheme, 0x0D);
+    table[NK_COLOR_TOGGLE] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_TOGGLE_HOVER] = nuklear_tinted_color(scheme, 2);
+    table[NK_COLOR_TOGGLE_CURSOR] = nuklear_tinted_color(scheme, 0x0D);
 
-    table[NK_COLOR_SELECT] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_SELECT_ACTIVE] = nuklear_base16_color(scheme, 2);
+    table[NK_COLOR_SELECT] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_SELECT_ACTIVE] = nuklear_tinted_color(scheme, 2);
 
-    table[NK_COLOR_SLIDER] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_SLIDER_CURSOR] = nuklear_base16_color(scheme, 5);
-    table[NK_COLOR_SLIDER_CURSOR_HOVER] = nuklear_base16_color(scheme, 0x0D);
-    table[NK_COLOR_SLIDER_CURSOR_ACTIVE] = nuklear_base16_color(scheme, 0x0D);
+    table[NK_COLOR_SLIDER] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_SLIDER_CURSOR] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_SLIDER_CURSOR_HOVER] = nuklear_tinted_color(scheme, 0x0D);
+    table[NK_COLOR_SLIDER_CURSOR_ACTIVE] = nuklear_tinted_color(scheme, 0x0D);
 
-    table[NK_COLOR_PROPERTY] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_PROPERTY] = nuklear_tinted_color(scheme, 1);
 
-    table[NK_COLOR_EDIT] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_EDIT_CURSOR] = nuklear_base16_color(scheme, 5);
+    table[NK_COLOR_EDIT] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_EDIT_CURSOR] = nuklear_tinted_color(scheme, 5);
 
-    table[NK_COLOR_COMBO] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_COMBO] = nuklear_tinted_color(scheme, 1);
 
-    table[NK_COLOR_CHART] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_CHART_COLOR] = nuklear_base16_color(scheme, 0x0D);
-    table[NK_COLOR_CHART_COLOR_HIGHLIGHT] = nuklear_base16_color(scheme, 9);
+    table[NK_COLOR_CHART] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_CHART_COLOR] = nuklear_tinted_color(scheme, 0x0D);
+    table[NK_COLOR_CHART_COLOR_HIGHLIGHT] = nuklear_tinted_color(scheme, 9);
 
-    table[NK_COLOR_SCROLLBAR] = nuklear_base16_color(scheme, 1);
-    table[NK_COLOR_SCROLLBAR_CURSOR] = nuklear_base16_color(scheme, 4);
-    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = nuklear_base16_color(scheme, 5);
-    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_base16_color(scheme, 0x0D);
+    table[NK_COLOR_SCROLLBAR] = nuklear_tinted_color(scheme, 1);
+    table[NK_COLOR_SCROLLBAR_CURSOR] = nuklear_tinted_color(scheme, 4);
+    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = nuklear_tinted_color(scheme, 5);
+    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_tinted_color(scheme, 0x0D);
 
-    table[NK_COLOR_TAB_HEADER] = nuklear_base16_color(scheme, 1);
+    table[NK_COLOR_TAB_HEADER] = nuklear_tinted_color(scheme, 1);
 
     table[NK_COLOR_KNOB] = table[NK_COLOR_SLIDER];
     table[NK_COLOR_KNOB_CURSOR] = table[NK_COLOR_SLIDER_CURSOR];
@@ -141,5 +135,5 @@ NK_API void nuklear_base16_set_scheme(struct nk_context* ctx, const tinted_schem
 }
 #endif
 
-#endif  // NK_BASE16_IMPLEMENTATION_ONCE
-#endif  // NK_BASE16_IMPLEMENTATION
+#endif  // NK_TINTED_IMPLEMENTATION_ONCE
+#endif  // NK_TINTED_IMPLEMENTATION

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
-project(nuklear_base16_demo_raylib)
+project(nuklear_tinted_demo_raylib)
 
 # C
 set(CMAKE_C_STANDARD 99)
@@ -57,7 +57,7 @@ add_executable(${PROJECT_NAME} main.c)
 # Use the overview demo matching raylib-nuklear's bundled nuklear.h
 if (raylib_nuklear_SOURCE_DIR)
     target_compile_definitions(${PROJECT_NAME} PRIVATE
-        NK_BASE16_DEMO_OVERVIEW="${raylib_nuklear_SOURCE_DIR}/vendor/nuklear/demo/common/overview.c"
+        NK_TINTED_DEMO_OVERVIEW="${raylib_nuklear_SOURCE_DIR}/vendor/nuklear/demo/common/overview.c"
     )
 endif()
 

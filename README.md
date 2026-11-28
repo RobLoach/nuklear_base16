@@ -1,6 +1,6 @@
 # nuklear_tinted
 
-[Tinted Theming](https://github.com/tinted-theming/home) styles for [Nuklear](https://github.com/Immediate-Mode-UI/Nuklear). Over 500 Base16 and Base24 color styles to apply to your Nuklear GUI.
+[Tinted Theming](https://github.com/tinted-theming/home) styles for [Nuklear](https://github.com/Immediate-Mode-UI/Nuklear). Over 500 Base16, Base24 and Tinted8 color styles to apply to your Nuklear GUI.
 
 ## Screenshot
 
@@ -41,6 +41,17 @@ To have every scheme, include `tinted.h`, which provides them as `tinted_schemes
 for (int i = 0; i < TINTED_COUNT; i++) {
     printf("%s\n", tinted_schemes[i]->name);
 }
+```
+
+### Tinted8
+
+[Tinted8](https://github.com/tinted-theming/home/blob/main/specs/tinted8/styling.md) schemes apply with `nuklear_tinted_set_tinted8_scheme()`, following the Tinted8 builder's default UI roles for both dark and light schemes. `tinted8.h` provides every one as `tinted8_schemes`, with `TINTED8_COUNT` entries:
+
+``` c
+#define TINTED_IMPLEMENTATION
+#include "vendor/tinted-c/include/tinted8-catppuccin-mocha.h"
+
+nuklear_tinted_set_tinted8_scheme(ctx, &tinted8_catppuccin_mocha);
 ```
 
 ## Demos

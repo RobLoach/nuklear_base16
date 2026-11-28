@@ -1,9 +1,10 @@
 #define NK_TINTED_IMPLEMENTATION
 #include "../../nuklear_tinted.h"
 
-/* Every scheme, as tinted_schemes */
+/* Every scheme, as tinted_schemes and tinted8_schemes */
 #define TINTED_IMPLEMENTATION
 #include "../../vendor/tinted-c/include/tinted.h"
+#include "../../vendor/tinted-c/include/tinted8.h"
 
 #include <math.h>
 #include <string.h>
@@ -24,19 +25,27 @@ void nuklear_tinted_demo(struct nk_context* ctx, int screenWidth, int screenHeig
 
     if (selected_scheme == -1) {
         selected_scheme = 0;
-        nuklear_tinted_set_scheme(ctx, tinted_schemes[selected_scheme]);
+        nuklear_tinted_set_tinted8_scheme(ctx, tinted8_schemes[selected_scheme]);
     }
 
     if (nk_begin(ctx, "Tinted", nk_rect(screenWidth - width, 0, width, screenHeight), flags)) {
         nk_layout_row_dynamic(ctx, 0, 1);
 
-        for (int i = 0; i < TINTED_COUNT; i++) {
+        /* The Tinted8 schemes come first, then the Base16 and Base24 schemes */
+        for (int i = 0; i < TINTED8_COUNT; i++) {
             nk_bool active = selected_scheme == i;
-            if (nk_radio_label(ctx, tinted_schemes[i]->name, &active)) {
-                nuklear_tinted_set_scheme(ctx, tinted_schemes[i]);
+            if (nk_radio_label(ctx, tinted8_schemes[i]->name, &active)) {
+                nuklear_tinted_set_tinted8_scheme(ctx, tinted8_schemes[i]);
                 selected_scheme = i;
             }
+        }
 
+        for (int i = 0; i < TINTED_COUNT; i++) {
+            nk_bool active = selected_scheme == TINTED8_COUNT + i;
+            if (nk_radio_label(ctx, tinted_schemes[i]->name, &active)) {
+                nuklear_tinted_set_scheme(ctx, tinted_schemes[i]);
+                selected_scheme = TINTED8_COUNT + i;
+            }
         }
     }
     nk_end(ctx);

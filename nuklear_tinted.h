@@ -1,5 +1,5 @@
 /**
- * nuklear_tinted: Base16 and Base24 Color Themes for Nuklear
+ * nuklear_tinted: Base16, Base24 and Tinted8 Color Themes for Nuklear
  * https://github.com/robloach/nuklear_tinted
  *
  * @file nuklear_tinted.h
@@ -39,6 +39,7 @@ extern "C" {
 
 NK_API void nuklear_tinted_set_scheme(struct nk_context* ctx, const tinted_scheme* scheme);
 NK_API struct nk_color nuklear_tinted_color(const tinted_scheme* scheme, int index);
+NK_API void nuklear_tinted_set_tinted8_scheme(struct nk_context* ctx, const tinted8_scheme* scheme);
 
 #ifdef __cplusplus
 }
@@ -122,6 +123,81 @@ NK_API void nuklear_tinted_set_scheme(struct nk_context* ctx, const tinted_schem
     table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = nuklear_tinted_color(scheme, 0x0D);
 
     table[NK_COLOR_TAB_HEADER] = nuklear_tinted_color(scheme, 1);
+
+    table[NK_COLOR_KNOB] = table[NK_COLOR_SLIDER];
+    table[NK_COLOR_KNOB_CURSOR] = table[NK_COLOR_SLIDER_CURSOR];
+    table[NK_COLOR_KNOB_CURSOR_HOVER] = table[NK_COLOR_SLIDER_CURSOR_HOVER];
+    table[NK_COLOR_KNOB_CURSOR_ACTIVE] = table[NK_COLOR_SLIDER_CURSOR_ACTIVE];
+
+    nk_style_from_table(ctx, table);
+}
+
+NK_INTERN struct nk_color nuklear_tinted8_rgb(tinted_color color) {
+    return nk_rgba(color.r, color.g, color.b, 255);
+}
+
+NK_API void nuklear_tinted_set_tinted8_scheme(struct nk_context* ctx, const tinted8_scheme* scheme) {
+    struct nk_color table[NK_COLOR_COUNT];
+    struct nk_color text, window, chrome, border, widget, recessed, selected, muted, caret, accent, info;
+    int light;
+    if (scheme == NULL) {
+        return;
+    }
+
+    // The Tinted8 builder's default ui roles, which swap black and white for light schemes.
+    // https://github.com/tinted-theming/home/blob/main/specs/tinted8/builder.md
+    light = scheme->variant != NULL && scheme->variant[0] == 'l';
+    text = nuklear_tinted8_rgb(light ? scheme->black.normal : scheme->white.normal); // ui.global.normal.foreground
+    window = nuklear_tinted8_rgb(light ? scheme->white.normal : scheme->black.normal); // ui.global.normal.background
+    chrome = nuklear_tinted8_rgb(light ? scheme->white.dim : scheme->black.bright); // ui.chrome.normal.background
+    border = nuklear_tinted8_rgb(light ? scheme->gray.bright : scheme->gray.dim); // ui.border.normal
+    widget = nuklear_tinted8_rgb(light ? scheme->white.dim : scheme->black.bright); // ui.highlight.button.background
+    recessed = nuklear_tinted8_rgb(light ? scheme->white.bright : scheme->black.dim); // ui.global.dark.background
+    selected = nuklear_tinted8_rgb(scheme->gray.normal); // ui.highlight.text.active.background
+    muted = nuklear_tinted8_rgb(light ? scheme->black.bright : scheme->white.dim); // ui.global.dark.foreground
+    caret = nuklear_tinted8_rgb(light ? scheme->black.normal : scheme->white.normal); // ui.cursor.normal.background
+    accent = nuklear_tinted8_rgb(scheme->cyan.normal); // ui.accent.normal
+    info = nuklear_tinted8_rgb(scheme->orange.normal); // ui.status.info
+
+    table[NK_COLOR_TEXT] = text;
+    table[NK_COLOR_WINDOW] = window;
+    table[NK_COLOR_HEADER] = chrome;
+    table[NK_COLOR_BORDER] = border;
+
+    // Hover sinks into the recessed surface, which keeps the text readable on it.
+    table[NK_COLOR_BUTTON] = widget;
+    table[NK_COLOR_BUTTON_HOVER] = recessed;
+    table[NK_COLOR_BUTTON_ACTIVE] = selected;
+
+    table[NK_COLOR_TOGGLE] = widget;
+    table[NK_COLOR_TOGGLE_HOVER] = recessed;
+    table[NK_COLOR_TOGGLE_CURSOR] = accent;
+
+    table[NK_COLOR_SELECT] = widget;
+    table[NK_COLOR_SELECT_ACTIVE] = selected;
+
+    table[NK_COLOR_SLIDER] = widget;
+    table[NK_COLOR_SLIDER_CURSOR] = text;
+    table[NK_COLOR_SLIDER_CURSOR_HOVER] = accent;
+    table[NK_COLOR_SLIDER_CURSOR_ACTIVE] = accent;
+
+    table[NK_COLOR_PROPERTY] = widget;
+
+    table[NK_COLOR_EDIT] = widget;
+    table[NK_COLOR_EDIT_CURSOR] = caret;
+
+    table[NK_COLOR_COMBO] = widget;
+
+    table[NK_COLOR_CHART] = widget;
+    table[NK_COLOR_CHART_COLOR] = accent;
+    table[NK_COLOR_CHART_COLOR_HIGHLIGHT] = info;
+
+    table[NK_COLOR_SCROLLBAR] = widget;
+    table[NK_COLOR_SCROLLBAR_CURSOR] = muted;
+    table[NK_COLOR_SCROLLBAR_CURSOR_HOVER] = text;
+    table[NK_COLOR_SCROLLBAR_CURSOR_ACTIVE] = accent;
+
+    table[NK_COLOR_TAB_HEADER] = widget;
 
     table[NK_COLOR_KNOB] = table[NK_COLOR_SLIDER];
     table[NK_COLOR_KNOB_CURSOR] = table[NK_COLOR_SLIDER_CURSOR];
